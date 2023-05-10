@@ -11,6 +11,6 @@ Resultado(pc,Jugador)
 function Resultado(pc, Jugador)
 {
     let obje= {1:3, 2:1,3:2}
-    let ResultadoJuego= pc== Jugador? "Empate!": pc==obje[Jugador]?"Ganaste!": "Perdiste!"
+    let ResultadoJuego= pc== Jugador? "Empate!": pc==obje[Jugador]?"Ganaste!!": "Perdiste!"
     alert(ResultadoJuego)
 }

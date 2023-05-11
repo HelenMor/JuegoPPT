@@ -1,16 +1,41 @@
+let victorias=0
+let derrotas=0
+ while(victorias<3 && derrotas<3)
+ {
+    let pc = Math.floor( Math.random()* (3-1+1)+ 1)
+    let Jugador = prompt("Seleccione 1=> Piedra, 2=> Papel o 3=> Tijera")
+    alert("El jugador ha seleccionado: " + Seleccion(Jugador))
+    alert("PC ha seleccionado: " + Seleccion(pc))
+    Resultado(pc,Jugador)
+ }
+ alert ("Has ganado: "+ victorias + " veces. Has perdido: "+ derrotas+ " veces.")
 
-let pc = Math.floor( Math.random()* (3-1+1)+ 1)
-let Jugador = prompt("Seleccione 1=> Piedra, 2=> Papel o 3=> Tijera")
-let SeleccionJugador= Jugador==1?"El Jugador ha seleccionado 🪨 ": Jugador==2? "El Jugador ha seleccionado 🗞️ ": "El Jugador ha seleccionado ✂️"
-let Seleccionpc= pc==1?"Pc ha seleccionado 🪨 ": pc==2? "Pc ha seleccionado 🗞️ ": "Pc ha seleccionado ✂️"
-alert(SeleccionJugador)
-alert(Seleccionpc)
-Resultado(pc,Jugador)
 
+
+function Seleccion(jugada)
+{
+  let eleccion = jugada==1 ?"🪨": jugada== 2? "📋": "✂️"
+  return eleccion
+}
 
 function Resultado(pc, Jugador)
 {
     let obje= {1:3, 2:1,3:2}
-    let ResultadoJuego= pc== Jugador? "Empate!": pc==obje[Jugador]?"Ganaste!!": "Perdiste!"
-    alert(ResultadoJuego)
+    let veredicto= ""
+    if (pc==obje[Jugador])
+    {
+        veredicto= "Ganaste!"  
+        victorias= victorias+1
+    }
+    else if (pc== Jugador)
+    {
+        veredicto= "Empate!"
+    }
+    else{
+      veredicto= "Perdiste!"
+      derrotas= derrotas+1
+      
+    }
+  
+    alert(veredicto)
 }
